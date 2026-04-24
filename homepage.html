@@ -239,9 +239,9 @@ input,textarea{font-family:inherit}
 /* ══════════════════════════════════════════════════════════════
    03 — HERO
 ══════════════════════════════════════════════════════════════ */
-.hero{position:relative;overflow:hidden;}
+.hero{position:relative;overflow:hidden;max-height:clamp(520px,calc(100vh - 120px),920px);}
 .hero__bg{position:relative;width:100%;line-height:0;}
-.hero__bg img{width:100%;height:auto;display:block;}
+.hero__bg img{width:100%;height:auto;display:block;min-height:100%;}
 .hero__content{
   position:absolute;inset:0;display:flex;align-items:center;
   z-index:2;
