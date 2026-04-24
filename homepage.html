@@ -239,9 +239,9 @@ input,textarea{font-family:inherit}
 /* ══════════════════════════════════════════════════════════════
    03 — HERO
 ══════════════════════════════════════════════════════════════ */
-.hero{position:relative;height:clamp(460px,calc(100vh - 160px),800px);display:flex;flex-direction:column}
-.hero__bg{position:absolute;inset:0;}
-.hero__bg.banner-ph{position:absolute;inset:0;}
+.hero{position:relative;overflow:hidden;}
+.hero__bg{position:relative;width:100%;line-height:0;}
+.hero__bg img{width:100%;height:auto;display:block;}
 .hero__content{
   position:absolute;inset:0;display:flex;align-items:center;
   z-index:2;
@@ -854,7 +854,9 @@ input,textarea{font-family:inherit}
      ║  abdomen, soft linen, eyes softly closed. Not posed.     ║
      ╚══════════════════════════════════════════════════════════╝ -->
 <section class="hero" aria-label="Hero">
-  <div class="hero__bg" style="background-image:url('Banners/Hero.webp');background-size:cover;background-position:center top;"></div>
+  <div class="hero__bg">
+    <img src="Banners/Hero.webp" alt="" aria-hidden="true" fetchpriority="high">
+  </div>
   <div class="hero__content">
     <div class="container">
       <div class="hero__inner">
