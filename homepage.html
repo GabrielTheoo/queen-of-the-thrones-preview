@@ -124,12 +124,12 @@ input,textarea{font-family:inherit}
 .btn-full{width:100%;justify-content:center}
 
 /* ── SCROLL REVEAL ─────────────────────────────────────────── */
-[data-reveal]{opacity:0;transition:opacity .75s var(--ease-out),transform .75s var(--ease-out)}
-[data-reveal="up"]{transform:translateY(36px)}
-[data-reveal="left"]{transform:translateX(-36px)}
-[data-reveal="right"]{transform:translateX(36px)}
-[data-reveal="scale"]{transform:scale(.94)}
-[data-reveal].revealed{opacity:1;transform:none}
+[data-reveal]{opacity:0;will-change:opacity,transform;transition:opacity .95s var(--ease-out),transform .95s var(--ease-out)}
+[data-reveal="up"]{transform:translateY(24px)}
+[data-reveal="left"]{transform:translateX(-24px)}
+[data-reveal="right"]{transform:translateX(24px)}
+[data-reveal="scale"]{transform:scale(.96)}
+[data-reveal].revealed{opacity:1;transform:none;will-change:auto}
 @media(prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none;transition:none}}
 
 /* ── PLACEHOLDER BANNERS ───────────────────────────────────── */
@@ -1605,8 +1605,20 @@ input,textarea{font-family:inherit}
         setTimeout(() => entry.target.classList.add('revealed'), delay);
         obs.unobserve(entry.target);
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -48px 0px' });
+    }, { threshold: 0.06, rootMargin: '0px 0px -20px 0px' });
     revealEls.forEach(el => obs.observe(el));
+
+    /* Reveal elements already in or just below the viewport on load */
+    requestAnimationFrame(() => {
+      revealEls.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight + 120) {
+          obs.unobserve(el);
+          const delay = parseFloat(el.dataset.delay || 0) * 1000;
+          setTimeout(() => el.classList.add('revealed'), 150 + delay);
+        }
+      });
+    });
   } else {
     revealEls.forEach(el => el.classList.add('revealed'));
   }
