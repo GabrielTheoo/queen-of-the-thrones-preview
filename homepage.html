@@ -1,0 +1,1718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Queen of the Thrones®: Castor oil packs & USDA Organic castor oil rituals for women who choose ritual over rush. EWG Verified®. Glass-bottled. 30-day guarantee.">
+<title>Castor Oil Packs &amp; Organic Castor Oil | Queen of the Thrones®</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!--
+  ═══════════════════════════════════════════════════════════════
+  QUEEN OF THE THRONES® — Homepage  |  Shopify-Ready HTML
+  ───────────────────────────────────────────────────────────────
+  SHOPIFY DEPLOYMENT NOTES:
+  • Replace src="Brand Assets/..." with {{ 'file.ext' | asset_url }}
+  • Upload all images to Shopify › Content › Files
+  • Product loops → replace static cards with Shopify collection objects
+  • Add-to-cart → wire to Shopify AJAX Cart API
+  • Newsletter → connect to Klaviyo / Shopify Email section
+  ═══════════════════════════════════════════════════════════════
+-->
+
+<style>
+/* ── DESIGN TOKENS ─────────────────────────────────────────── */
+:root {
+  /* — Brand Colors (Figma style guide) — */
+  --primary:       #7C094B;
+  --primary-dark:  #5A0636;
+  --secondary:     #990255;
+  --electric:      #D62BA2;
+  --electric-dark: #B51E8A;
+  --teal:          #51C9C9;
+  --teal-light:    #8ADADA;
+  --coral:         #E55159;
+  --cream:         #FFF3EE;
+  --cream-dark:    #F5E6DC;
+  --off-white:     #FDFAF8;
+  --white:         #FFFFFF;
+  --text:          #1A0A0F;
+  --text-mid:      #5C2C42;
+  --text-muted:    #9E6A7E;
+
+  /* — Legacy aliases so no HTML changes needed — */
+  --navy:       var(--primary);
+  --navy-dark:  var(--primary-dark);
+  --gold:       var(--electric);
+  --gold-dark:  var(--electric-dark);
+  --sky:        var(--teal-light);
+
+  /* — Typography (Figma: Libre Baskerville + Inter) — */
+  --font-display: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+  --font-body:    'Inter', 'Helvetica Neue', Arial, sans-serif;
+
+  /* — Shape (Figma: S=10px, M=34px, L=54px) — */
+  --radius-sm:   10px;
+  --radius-md:   34px;
+  --radius-lg:   54px;
+  --radius-xl:   54px;
+  --radius-full: 9999px;
+
+  /* — Elevation (Figma: blur 7px, Y 3px, 17% opacity) — */
+  --shadow-xs:   0 2px 4px rgba(124,9,75,.08);
+  --shadow-sm:   0 3px 7px rgba(124,9,75,.17);
+  --shadow-md:   0 8px 24px rgba(124,9,75,.18);
+  --shadow-lg:   0 20px 60px rgba(124,9,75,.22);
+  --shadow-card: 0 3px 7px rgba(124,9,75,.17);
+
+  --ease-out:    cubic-bezier(.16,1,.3,1);
+  --ease-spring: cubic-bezier(.34,1.56,.64,1);
+}
+
+/* ── RESET ─────────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--font-body);font-size:16px;line-height:1.6;color:var(--text);background:var(--cream);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+ul,ol{list-style:none}
+input,textarea{font-family:inherit}
+
+/* ── TYPOGRAPHY (Figma scale) ──────────────────────────────── */
+.t-display   {font-family:var(--font-display);font-weight:700;line-height:1.12;letter-spacing:-.01em}
+.t-h1{font-size:clamp(2rem,5vw,3.25rem)}     /* Figma: 52px Bold  */
+.t-h2{font-size:clamp(1.75rem,3.5vw,2.75rem);font-style:italic}/* Figma: 44px Bold Italic  */
+.t-h3{font-size:clamp(1.4rem,3vw,2.25rem)}   /* Figma: 36px Reg   */
+.t-h4{font-size:clamp(1.1rem,2vw,1.75rem)}   /* Figma: 28px Bold  */
+.t-body-lg   {font-family:var(--font-display);font-size:1.25rem;line-height:1.6}  /* 20px */
+.t-body      {font-family:var(--font-display);font-size:1.125rem;line-height:1.62}/* 18px */
+.t-small     {font-size:.875rem;line-height:1.5}
+.t-caps      {font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+
+/* ── LAYOUT ────────────────────────────────────────────────── */
+.container{width:100%;max-width:1280px;margin-inline:auto;padding-inline:clamp(20px,5vw,80px)}
+.section-pad{padding-block:clamp(60px,10vw,120px)}
+.section-pad-sm{padding-block:clamp(40px,6vw,80px)}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.flex-center{display:flex;align-items:center;justify-content:center}
+.text-center{text-align:center}
+
+/* ── BUTTONS ───────────────────────────────────────────────── */
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:.85em 2em;border-radius:var(--radius-full);
+  font-size:.9375rem;font-weight:600;letter-spacing:.02em;
+  transition:all .25s var(--ease-out);white-space:nowrap;
+}
+.btn-primary{background:var(--navy);color:var(--white);box-shadow:0 2px 12px rgba(124,9,75,.25)}
+.btn-primary:hover{background:var(--navy-dark);transform:translateY(-2px);box-shadow:0 6px 24px rgba(124,9,75,.3)}
+.btn-primary:active{transform:translateY(0)}
+.btn-ghost{background:transparent;color:var(--navy);border:1.5px solid var(--navy)}
+.btn-ghost:hover{background:var(--navy);color:var(--white)}
+.btn-white{background:var(--white);color:var(--navy);box-shadow:var(--shadow-sm)}
+.btn-white:hover{background:var(--cream);transform:translateY(-2px)}
+.btn-teal{background:var(--teal);color:#102E34;font-weight:700;box-shadow:0 4px 16px rgba(214,43,162,.35)}
+.btn-teal:hover{background:var(--teal-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(81,201,201,.5)}
+.btn-gold{background:linear-gradient(90deg,#d62ba2,#702155);color:var(--white);font-weight:700;box-shadow:0 4px 16px rgba(214,43,162,.4)}
+.btn-gold:hover{background:linear-gradient(90deg,#c01e91,#5A1A40);transform:translateY(-2px);box-shadow:0 8px 24px rgba(214,43,162,.5)}
+.btn-sm{padding:.6em 1.5em;font-size:.875rem}
+.btn-full{width:100%;justify-content:center}
+
+/* ── SCROLL REVEAL ─────────────────────────────────────────── */
+[data-reveal]{opacity:0;transition:opacity .75s var(--ease-out),transform .75s var(--ease-out)}
+[data-reveal="up"]{transform:translateY(36px)}
+[data-reveal="left"]{transform:translateX(-36px)}
+[data-reveal="right"]{transform:translateX(36px)}
+[data-reveal="scale"]{transform:scale(.94)}
+[data-reveal].revealed{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none;transition:none}}
+
+/* ── PLACEHOLDER BANNERS ───────────────────────────────────── */
+.banner-ph{
+  background:linear-gradient(135deg,var(--navy) 0%,#991255 60%,#5A0636 100%);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.banner-ph::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 30% 50%,rgba(81,201,201,.15) 0%,transparent 60%),
+             radial-gradient(ellipse at 70% 20%,rgba(214,43,162,.08) 0%,transparent 50%);
+}
+.banner-ph__inner{
+  position:relative;z-index:1;text-align:center;
+  border:2px dashed rgba(255,255,255,.2);
+  border-radius:var(--radius-md);padding:28px 40px;
+}
+.banner-ph__icon{font-size:2rem;margin-bottom:8px;opacity:.4}
+.banner-ph__label{color:rgba(255,255,255,.5);font-size:.875rem;font-weight:500}
+.banner-ph__hint{color:rgba(255,255,255,.3);font-size:.75rem;margin-top:4px}
+
+/* ══════════════════════════════════════════════════════════════
+   01 — ANNOUNCEMENT BAR
+══════════════════════════════════════════════════════════════ */
+.announce{
+  background:#51C9C9;color:#102E34;
+  padding:10px 20px;text-align:center;position:relative;
+  font-size:.8125rem;font-weight:500;letter-spacing:.04em;
+  min-height:40px;overflow:hidden;
+}
+.announce__track{position:relative;height:20px}
+.announce__msg{
+  position:absolute;inset:0;display:flex;align-items:center;
+  justify-content:center;gap:8px;
+  opacity:0;transform:translateY(100%);
+  transition:opacity .5s ease,transform .5s ease;
+}
+.announce__msg.active{opacity:1;transform:translateY(0)}
+.announce__msg span{color:#7C094B;font-weight:600}
+.announce__msg a{color:#7C094B;font-weight:600}
+.announce__dot{width:4px;height:4px;border-radius:50%;background:#7C094B;opacity:.6}
+
+/* ══════════════════════════════════════════════════════════════
+   02 — NAVIGATION (solid white, always)
+══════════════════════════════════════════════════════════════ */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:#FFFFFF;
+  box-shadow:0 1px 0 rgba(0,0,0,.08);
+}
+.nav{display:flex;align-items:center;height:64px;padding:0;gap:0}
+.nav__logo{
+  display:flex;align-items:center;height:40px;flex-shrink:0;
+}
+.nav__logo img{height:40px;width:auto;display:block;}
+.nav__links{flex:1;display:flex;align-items:center;justify-content:center;gap:28px}
+.nav__link{
+  font-size:.875rem;font-weight:500;color:var(--text);
+  letter-spacing:.02em;position:relative;padding-bottom:2px;
+  transition:color .2s ease;
+}
+.nav__link::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:1.5px;
+  background:var(--primary);
+  transform:scaleX(0);transform-origin:left;transition:transform .25s ease;
+}
+.nav__link:hover::after,.nav__link.active::after{transform:scaleX(1)}
+.nav__link:hover{color:var(--primary)}
+.nav__link--quiz{
+  background:rgba(81,201,201,.12);color:var(--teal)!important;
+  border:1px solid rgba(81,201,201,.35);
+  padding:.35em 1em;border-radius:var(--radius-full);font-weight:600;
+  transition:all .2s ease;
+}
+.nav__link--quiz::after{display:none}
+.nav__link--quiz:hover{background:var(--teal);color:var(--white)!important;border-color:var(--teal);transform:translateY(-1px)}
+/* ─── Right-side utility icons ─── */
+.nav__utils{display:flex;align-items:center;gap:8px}
+.nav__icon{
+  width:40px;height:40px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--text);transition:background .2s ease;position:relative;
+}
+.nav__icon:hover{background:rgba(0,0,0,.06)}
+.nav__icon svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.nav__cart-count{
+  position:absolute;top:4px;right:4px;
+  width:16px;height:16px;border-radius:50%;background:var(--primary);
+  color:white;font-size:.625rem;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+}
+.nav__hamburger{display:none;flex-direction:column;gap:5px;width:40px;height:40px;align-items:center;justify-content:center}
+.nav__hamburger span{display:block;width:22px;height:1.5px;background:var(--text);border-radius:2px;transition:all .3s ease}
+/* ─── Mobile menu ─── */
+.mobile-menu{
+  display:none;position:fixed;inset:0;background:var(--cream);
+  z-index:200;flex-direction:column;padding:24px 24px 40px;
+  transform:translateX(100%);transition:transform .35s var(--ease-out);
+}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu__close{align-self:flex-end;font-size:1.5rem;color:var(--primary);margin-bottom:32px}
+.mobile-menu__links{display:flex;flex-direction:column;gap:8px}
+.mobile-menu__link{font-family:var(--font-display);font-size:1.8rem;color:var(--primary);padding:12px 0;border-bottom:1px solid var(--cream-dark)}
+.mobile-menu__cta{margin-top:32px}
+
+/* ══════════════════════════════════════════════════════════════
+   03 — HERO
+══════════════════════════════════════════════════════════════ */
+.hero{position:relative;height:clamp(460px,calc(100vh - 160px),800px);display:flex;flex-direction:column}
+.hero__bg{position:absolute;inset:0;}
+.hero__bg.banner-ph{position:absolute;inset:0;}
+.hero__content{
+  position:absolute;inset:0;display:flex;align-items:center;
+  z-index:2;
+}
+.hero__inner{max-width:640px}
+.hero__eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(81,201,201,.15);border:1px solid rgba(81,201,201,.3);
+  border-radius:var(--radius-full);padding:6px 16px;
+  color:var(--teal);font-size:.8125rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  margin-bottom:20px;
+}
+.hero__h1{color:var(--white);margin-bottom:20px}
+.hero__sub{
+  color:rgba(255,255,255,.85);font-size:1.2rem;line-height:1.7;
+  margin-bottom:16px;max-width:520px;
+}
+.hero__body{color:rgba(255,255,255,.65);font-size:.9375rem;line-height:1.75;margin-bottom:36px;max-width:480px}
+.hero__ctas{display:flex;flex-wrap:wrap;gap:12px}
+.hero__scroll{
+  position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
+  color:rgba(255,255,255,.4);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;
+  display:flex;flex-direction:column;align-items:center;gap:8px;z-index:2;
+}
+.hero__scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,transparent,rgba(255,255,255,.3));animation:scrollPulse 2s ease infinite}
+@keyframes scrollPulse{0%,100%{opacity:.4}50%{opacity:1}}
+
+/* ══════════════════════════════════════════════════════════════
+   04 — TRUST BAR (single full-width row)
+══════════════════════════════════════════════════════════════ */
+.trust-bar{background:#51C9C9;padding:18px 0}
+.trust-bar__inner{
+  display:flex;flex-wrap:nowrap;align-items:center;
+  justify-content:space-between;gap:0;
+}
+.trust-item{
+  display:flex;align-items:center;gap:7px;flex:1;justify-content:center;
+  color:#102E34;font-size:.75rem;font-weight:600;
+  text-align:left;
+}
+.trust-item__icon{
+  width:26px;height:26px;background:rgba(16,46,52,.12);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.trust-item__icon svg{width:13px;height:13px;stroke:#102E34;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.trust-bar__divider{width:1px;height:20px;background:rgba(16,46,52,.15);flex-shrink:0}
+
+/* ══════════════════════════════════════════════════════════════
+   05 — SHOP BY RITUAL
+══════════════════════════════════════════════════════════════ */
+.rituals{background:#F7F3F5}
+.section-header{margin-bottom:clamp(40px,6vw,64px)}
+.section-label{
+  display:inline-block;color:var(--teal);font-size:.75rem;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;
+}
+.rituals-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.ritual-card{
+  position:relative;border-radius:var(--radius-lg);overflow:hidden;
+  aspect-ratio:3/4;background:var(--navy-dark);
+  box-shadow:var(--shadow-card);
+  transition:transform .35s var(--ease-out),box-shadow .35s ease;
+}
+.ritual-card:hover{transform:translateY(-8px) scale(1.01);box-shadow:var(--shadow-lg)}
+.ritual-card__img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center;
+  transition:transform .5s var(--ease-out);
+}
+.ritual-card:hover .ritual-card__img{transform:scale(1.07)}
+.ritual-card__overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(90,6,54,.9) 0%,rgba(90,6,54,.4) 40%,transparent 70%);
+}
+.ritual-card__body{
+  position:absolute;bottom:0;left:0;right:0;padding:28px 24px;
+}
+.ritual-card__tag{
+  display:inline-block;background:var(--teal);color:var(--navy);
+  font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  padding:4px 10px;border-radius:var(--radius-full);margin-bottom:10px;
+}
+.ritual-card__title{font-family:var(--font-display);font-size:1.5rem;color:var(--white);margin-bottom:6px;line-height:1.2}
+.ritual-card__sub{font-size:.875rem;color:rgba(255,255,255,.7);margin-bottom:16px;line-height:1.5}
+.ritual-card__link{
+  display:inline-flex;align-items:center;gap:6px;
+  color:var(--teal);font-size:.8125rem;font-weight:600;letter-spacing:.04em;
+  transition:gap .2s ease;
+}
+.ritual-card:hover .ritual-card__link{gap:10px}
+.ritual-card__link svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.rituals__cta{text-align:center;margin-top:32px;font-size:.9rem;color:var(--text-mid)}
+.rituals__cta a{color:var(--primary);font-weight:600;border-bottom:1px solid var(--teal);padding-bottom:1px}
+
+/* ══════════════════════════════════════════════════════════════
+   06 — PRODUCT CARDS (BEST SELLERS) — Premium UI
+══════════════════════════════════════════════════════════════ */
+.best-sellers{background:#F3F6F6}
+.best-sellers .container{padding-inline:clamp(12px,2.5vw,48px)}
+.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.product-card{
+  background:var(--white);border-radius:16px;
+  border:1.5px solid rgba(124,9,75,.06);
+  box-shadow:var(--shadow-card);overflow:hidden;
+  transition:transform .3s var(--ease-out),box-shadow .3s ease,border-color .3s ease;
+  position:relative;display:flex;flex-direction:column;
+}
+.product-card:hover{
+  transform:translateY(-10px);
+  box-shadow:var(--shadow-lg),0 0 0 1.5px var(--teal);
+  border-color:transparent;
+}
+/* Gradient accent line bottom */
+.product-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--teal),var(--gold));
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .35s var(--ease-out);
+}
+.product-card:hover::after{transform:scaleX(1)}
+
+.product-card__image-wrap{
+  position:relative;background:#f8f8f8;overflow:hidden;
+  aspect-ratio:1/1;
+}
+.product-card__image-wrap img{
+  width:100%;height:100%;object-fit:contain;
+  padding:24px;
+  transition:transform .4s var(--ease-out);
+}
+.product-card:hover .product-card__image-wrap img{transform:scale(1.07)}
+.product-card__badge{
+  position:absolute;top:14px;left:14px;
+  background:var(--teal);color:#102E34;
+  font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  padding:5px 12px;border-radius:var(--radius-full);
+}
+.product-card__wishlist{
+  position:absolute;top:12px;right:12px;
+  width:34px;height:34px;border-radius:50%;
+  background:var(--white);box-shadow:var(--shadow-xs);
+  display:flex;align-items:center;justify-content:center;
+  transition:all .2s ease;z-index:2;
+}
+.product-card__wishlist svg{width:16px;height:16px;stroke:var(--text-muted);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:all .2s ease}
+.product-card__wishlist:hover{background:var(--coral);box-shadow:0 4px 12px rgba(229,81,89,.3)}
+.product-card__wishlist:hover svg{stroke:white;fill:white}
+.product-card__wishlist.wished svg{stroke:var(--coral);fill:var(--coral)}
+.product-card__quick-view{
+  position:absolute;bottom:0;left:0;right:0;
+  background:rgba(124,9,75,.85);color:var(--white);
+  font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  padding:12px;text-align:center;
+  transform:translateY(100%);transition:transform .3s var(--ease-out);
+  backdrop-filter:blur(4px);
+}
+.product-card:hover .product-card__quick-view{transform:translateY(0)}
+
+.product-card__body{padding:20px;display:flex;flex-direction:column;flex:1;gap:0}
+.product-card__rating{display:flex;align-items:center;gap:6px;margin-bottom:10px}
+.product-card__stars{color:var(--electric);font-size:.875rem;letter-spacing:.5px}
+.product-card__rating-num{font-size:.8rem;font-weight:600;color:var(--text)}
+.product-card__rating-count{font-size:.75rem;color:var(--text-muted)}
+.product-card__name{
+  font-family:var(--font-display);font-size:1.15rem;color:var(--navy);
+  margin-bottom:4px;line-height:1.3;
+}
+.product-card__tagline{font-size:.8375rem;color:var(--primary);font-style:italic;margin-bottom:12px}
+.product-card__desc{font-size:.8125rem;color:var(--text-mid);line-height:1.6;margin-bottom:14px;flex:1}
+.product-card__sizes{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.size-pill{
+  padding:5px 12px;border-radius:var(--radius-full);
+  font-size:.75rem;font-weight:600;border:1.5px solid rgba(124,9,75,.15);
+  color:var(--text-mid);cursor:pointer;transition:all .2s ease;background:transparent;
+}
+.size-pill.active,.size-pill:hover{background:var(--navy);color:var(--white);border-color:var(--navy)}
+.product-card__footer{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto}
+.product-card__price{font-size:1.25rem;font-weight:700;color:var(--navy)}
+.product-card__price-was{font-size:.8rem;color:var(--text-muted);text-decoration:line-through;margin-left:6px}
+
+/* Add to Ritual Button */
+.btn-ritual{
+  flex:1;background:linear-gradient(90deg,#d62ba2,#702155);color:var(--white);
+  padding:.65em 1em;border-radius:var(--radius-full);
+  font-size:.8125rem;font-weight:700;letter-spacing:.04em;
+  display:flex;align-items:center;justify-content:center;gap:7px;
+  transition:all .25s var(--ease-out);position:relative;overflow:hidden;
+  box-shadow:0 3px 12px rgba(214,43,162,.3);
+}
+.btn-ritual:hover{background:linear-gradient(90deg,#c01e91,#5A1A40);transform:scale(1.02);box-shadow:0 6px 20px rgba(214,43,162,.45)}
+.btn-ritual:active{transform:scale(.98)}
+.btn-ritual svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.btn-ritual.adding{opacity:.7;pointer-events:none}
+.btn-ritual.added{background:linear-gradient(135deg,var(--teal),#3AAEAE);box-shadow:0 3px 12px rgba(81,201,201,.4)}
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+
+/* ══════════════════════════════════════════════════════════════
+   07 — CAMPAIGN BANNER (split layout)
+══════════════════════════════════════════════════════════════ */
+.campaign{
+  background:#F3F6F6;padding:clamp(60px,8vw,100px) 0;overflow:hidden;
+}
+.campaign__layout{
+  display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;
+}
+.campaign__content{max-width:540px}
+.campaign__eyebrow{color:var(--electric);font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px}
+.campaign__h2{color:var(--primary);margin-bottom:20px}
+.campaign__body{color:var(--text-mid);font-size:1.05rem;line-height:1.8;margin-bottom:32px}
+.campaign__cta-group{display:flex;gap:12px;flex-wrap:wrap}
+.campaign__image{
+  display:flex;align-items:center;justify-content:center;
+  aspect-ratio:4/5;
+}
+.campaign__image img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 20px 60px rgba(124,9,75,.18))}
+@media(max-width:768px){
+  .campaign__layout{grid-template-columns:1fr}
+  .campaign__image{aspect-ratio:16/9;order:-1}
+}
+
+/* ══════════════════════════════════════════════════════════════
+   08 — MANIFESTO STRIP
+══════════════════════════════════════════════════════════════ */
+.manifesto{
+  background:#FFF4FB;padding:clamp(80px,12vw,140px) 0;
+  overflow:hidden;position:relative;
+}
+.manifesto__accent{
+  width:60px;height:3px;
+  background:linear-gradient(90deg,var(--teal),var(--electric));
+  margin:0 auto 40px;border-radius:2px;
+}
+.manifesto__text{
+  font-family:var(--font-display);
+  font-size:clamp(2rem,5vw,4rem);
+  color:var(--text);text-align:center;
+  line-height:1.5;max-width:900px;margin:0 auto;
+  position:relative;z-index:1;font-style:italic;
+}
+.manifesto__text em{color:var(--teal);font-style:italic}
+.manifesto__text .gold{color:var(--electric)}
+.manifesto__line{overflow:hidden}
+.manifesto__word{
+  display:inline-block;
+  opacity:0;transform:translateY(30px);
+  transition:opacity .6s var(--ease-out),transform .6s var(--ease-out);
+}
+.manifesto__word.revealed{opacity:1;transform:none}
+.manifesto__sub{
+  text-align:center;color:var(--text-muted);
+  font-size:.875rem;letter-spacing:.16em;text-transform:uppercase;
+  margin-top:48px;font-weight:500;position:relative;z-index:1;
+}
+.manifesto__logo{
+  display:flex;justify-content:center;margin-top:32px;position:relative;z-index:1;
+}
+.manifesto__logo img{height:64px;width:auto;display:block;}
+
+/* ══════════════════════════════════════════════════════════════
+   09 — HOW THE RITUAL WORKS
+══════════════════════════════════════════════════════════════ */
+.how-it-works{background:#FFF3EE}
+.how-it-works__layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.steps{display:flex;flex-direction:column;gap:0}
+.step{
+  display:flex;gap:24px;padding:28px 0;
+  border-bottom:1px solid var(--cream-dark);position:relative;
+}
+.step:last-child{border-bottom:none}
+.step__num{
+  font-family:var(--font-display);font-size:4rem;line-height:1;
+  color:rgba(124,9,75,.08);font-weight:400;flex-shrink:0;width:64px;
+  transition:color .3s ease;
+}
+.step:hover .step__num{color:rgba(124,9,75,.18)}
+.step__content{padding-top:4px}
+.step__title{font-family:var(--font-display);font-size:1.4rem;color:var(--navy);margin-bottom:8px;font-style:italic;font-weight:700}
+.step__body{font-size:.9375rem;color:var(--text-mid);line-height:1.7;margin-bottom:4px}
+.step__detail{font-size:.875rem;color:var(--teal);font-weight:500;font-style:italic}
+.how-it-works__img{border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:3/4}
+.how-it-works__img img{width:100%;height:100%;object-fit:cover}
+.how-it-works__ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:40px}
+
+/* ══════════════════════════════════════════════════════════════
+   10 — WHY QUEEN OF THE THRONES
+══════════════════════════════════════════════════════════════ */
+.why{background:#EBF8F8}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.why-card{
+  background:var(--white);border-radius:var(--radius-lg);
+  padding:32px 28px;
+  border:1px solid rgba(81,201,201,.15);
+  box-shadow:var(--shadow-xs);
+  transition:transform .3s var(--ease-out),box-shadow .3s ease;
+}
+.why-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
+.why-card__icon{
+  width:52px;height:52px;border-radius:var(--radius-md);
+  background:linear-gradient(135deg,rgba(81,201,201,.18),rgba(81,201,201,.06));
+  display:flex;align-items:center;justify-content:center;margin-bottom:20px;
+}
+.why-card__icon svg{width:24px;height:24px;stroke:var(--teal);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.why-card__num{
+  font-family:var(--font-display);font-size:.875rem;color:var(--teal);
+  letter-spacing:.08em;margin-bottom:8px;
+}
+.why-card__title{font-family:var(--font-display);font-size:1.25rem;color:var(--teal);margin-bottom:12px;line-height:1.3;font-style:italic}
+.why-card__body{font-size:.875rem;color:var(--text-mid);line-height:1.7}
+
+/* ══════════════════════════════════════════════════════════════
+   11 — TESTIMONIALS (Beam-style single-slide navigator)
+══════════════════════════════════════════════════════════════ */
+.testimonials{background:#FFF3EE;position:relative;overflow:hidden}
+.testimonials::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% -10%,rgba(81,201,201,.06) 0%,transparent 60%);
+}
+.testimonials .section-label{color:var(--teal)}
+.t2-slider{
+  position:relative;max-width:860px;margin:0 auto;
+  min-height:280px;
+}
+.t2-slide{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  opacity:0;transform:translateY(20px);
+  transition:opacity .5s var(--ease-out),transform .5s var(--ease-out);
+  pointer-events:none;
+}
+.t2-slide.active{
+  opacity:1;transform:translateY(0);pointer-events:auto;
+  position:relative;
+}
+.t2-openquote{
+  font-family:var(--font-display);font-size:5rem;line-height:.6;
+  color:var(--teal);opacity:.35;margin-bottom:16px;
+  display:block;
+}
+.t2-quote{
+  font-family:var(--font-display);font-size:clamp(1.2rem,2.5vw,1.65rem);
+  color:var(--text);line-height:1.65;font-style:italic;
+  margin-bottom:36px;
+}
+.t2-author{
+  display:flex;align-items:center;gap:16px;
+  background:var(--white);border:1px solid rgba(81,201,201,.18);
+  border-radius:var(--radius-full);padding:10px 20px 10px 10px;
+  box-shadow:var(--shadow-sm);
+}
+.t2-avatar{
+  width:48px;height:48px;border-radius:50%;object-fit:cover;
+  border:2px solid var(--teal);flex-shrink:0;
+}
+.t2-name{font-size:.9rem;font-weight:700;color:var(--primary)}
+.t2-meta{font-size:.75rem;color:var(--text-muted);margin-top:1px}
+.t2-stars{color:var(--teal);font-size:.85rem;letter-spacing:1px;margin-bottom:2px}
+/* Navigation */
+.t2-nav{
+  display:flex;align-items:center;justify-content:center;
+  gap:24px;margin-top:40px;
+}
+.t2-arrow{
+  width:48px;height:48px;border-radius:50%;
+  border:1.5px solid rgba(81,201,201,.3);
+  background:var(--white);color:var(--teal);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:all .2s ease;flex-shrink:0;
+  box-shadow:var(--shadow-xs);
+}
+.t2-arrow:hover{background:var(--teal);color:var(--white);border-color:var(--teal);transform:scale(1.06)}
+.t2-arrow svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.t2-dots{display:flex;align-items:center;gap:10px}
+.t2-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:rgba(81,201,201,.28);border:none;cursor:pointer;
+  transition:all .25s ease;padding:0;
+}
+.t2-dot.active{
+  background:var(--teal);width:28px;border-radius:4px;
+}
+.testimonials__cta{text-align:center;margin-top:48px}
+
+/* ══════════════════════════════════════════════════════════════
+   12 — UGC / INSTAGRAM GRID
+══════════════════════════════════════════════════════════════ */
+.ugc{background:#FFF3EE}
+.ugc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;border-radius:var(--radius-lg);overflow:hidden}
+.ugc-item{
+  position:relative;aspect-ratio:1/1;overflow:hidden;
+  background:var(--teal-light);cursor:pointer;
+}
+.ugc-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s var(--ease-out)}
+.ugc-item:hover img{transform:scale(1.08)}
+.ugc-item__overlay{
+  position:absolute;inset:0;
+  background:rgba(16,46,52,.55);
+  opacity:0;transition:opacity .3s ease;
+  display:flex;align-items:center;justify-content:center;gap:20px;
+}
+.ugc-item:hover .ugc-item__overlay{opacity:1}
+.ugc-item__icon{
+  color:white;font-size:1.3rem;transform:scale(.8);
+  transition:transform .3s var(--ease-out);
+}
+.ugc-item:hover .ugc-item__icon{transform:scale(1)}
+.ugc-cta{
+  grid-column:span 1;
+  background:#102E34;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;padding:32px;text-align:center;gap:16px;
+}
+.ugc-cta p{color:rgba(255,255,255,.75);font-size:.8125rem}
+.ugc__tag{
+  display:inline-block;background:rgba(81,201,201,.1);
+  border:1px solid rgba(81,201,201,.3);border-radius:var(--radius-full);
+  color:var(--teal);font-size:.8rem;font-weight:600;padding:6px 16px;
+  margin-top:20px;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   13 — FOOTER
+══════════════════════════════════════════════════════════════ */
+.site-footer{background:var(--navy-dark);color:rgba(255,255,255,.8)}
+.footer__newsletter{
+  background:#FDFAF8;
+  padding:clamp(48px,8vw,80px) 0;border-bottom:1px solid rgba(81,201,201,.12);
+}
+.footer__nl-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.footer__nl-heading{font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2.5rem);color:var(--teal);margin-bottom:10px;font-style:italic;}
+.footer__nl-sub{color:var(--primary);font-size:.9375rem;line-height:1.7;font-style:italic;}
+.footer__nl-form{display:flex;gap:8px}
+.footer__nl-input{
+  flex:1;padding:.85em 1.25em;border-radius:var(--radius-full);
+  border:1.5px solid rgba(81,201,201,.4);background:#FFFFFF;
+  color:var(--teal);font-size:.9375rem;font-family:inherit;
+  transition:border-color .2s ease;
+}
+.footer__nl-input::placeholder{color:rgba(81,201,201,.45)}
+.footer__nl-input:focus{outline:none;border-color:var(--teal);}
+.footer__nl-btn{flex-shrink:0}
+.footer__nl-note{font-size:.75rem;color:var(--teal);opacity:.55;margin-top:10px;font-style:italic;}
+
+.footer__main{padding:clamp(48px,7vw,72px) 0 clamp(32px,5vw,48px)}
+.footer__cols{display:grid;grid-template-columns:1.8fr repeat(4,1fr);gap:40px}
+.footer__brand .nav__logo img{height:44px;filter:brightness(0) invert(1);opacity:.9}
+.footer__brand p{color:rgba(255,255,255,.45);font-size:.875rem;line-height:1.7;margin:16px 0 24px;max-width:220px}
+.footer__social{display:flex;gap:10px}
+.footer__social-link{
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;
+  transition:background .2s ease,transform .2s ease;
+}
+.footer__social-link:hover{background:rgba(81,201,201,.2);transform:translateY(-2px)}
+.footer__social-link svg{width:16px;height:16px;stroke:rgba(255,255,255,.7);fill:none;stroke-width:1.8}
+.footer__col h5{
+  font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(255,255,255,.4);margin-bottom:20px;
+}
+.footer__col ul{display:flex;flex-direction:column;gap:10px}
+.footer__col a{font-size:.875rem;color:rgba(255,255,255,.6);transition:color .2s ease}
+.footer__col a:hover{color:var(--teal)}
+
+.footer__bottom{
+  padding-top:24px;border-top:1px solid rgba(255,255,255,.07);
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;
+}
+.footer__tagline{font-family:var(--font-display);font-size:.9375rem;color:rgba(255,255,255,.35)}
+.footer__trust{display:flex;flex-wrap:wrap;gap:16px}
+.footer__trust-item{font-size:.75rem;color:rgba(255,255,255,.35);display:flex;align-items:center;gap:5px}
+.footer__trust-item::before{content:'✓';color:var(--electric);font-size:.65rem}
+.footer__legal{display:flex;flex-wrap:wrap;gap:16px}
+.footer__legal a{font-size:.75rem;color:rgba(255,255,255,.3);transition:color .2s ease}
+.footer__legal a:hover{color:rgba(255,255,255,.6)}
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════════════════════ */
+@media(max-width:1024px){
+  .rituals-grid,.products-grid,.why-grid{grid-template-columns:repeat(2,1fr)}
+  .how-it-works__layout{grid-template-columns:1fr;gap:48px}
+  .how-it-works__img{aspect-ratio:16/9;order:-1}
+  .footer__cols{grid-template-columns:1fr 1fr;gap:32px}
+  .footer__nl-inner{grid-template-columns:1fr;gap:32px}
+  .trust-item span{display:none} /* icon-only on tablet */
+  .trust-item{justify-content:center}
+}
+@media(max-width:768px){
+  .nav__links{display:none}
+  .nav__hamburger{display:flex}
+  .mobile-menu{display:flex}
+  .rituals-grid{grid-template-columns:1fr 1fr}
+  .products-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .ugc-grid{grid-template-columns:repeat(2,1fr)}
+  .footer__cols{grid-template-columns:1fr 1fr;gap:24px}
+  .campaign__overlay{background:linear-gradient(to bottom,rgba(90,6,54,.7),rgba(90,6,54,.9))}
+  .footer__nl-form{flex-direction:column}
+  .footer__nl-btn{width:100%;justify-content:center}
+  .trust-bar__inner{flex-wrap:wrap;gap:10px 0;justify-content:center}
+  .trust-item{flex:0 0 33.33%;justify-content:center}
+  .trust-item span{display:inline}
+  .trust-bar__divider{display:none}
+}
+@media(max-width:480px){
+  .rituals-grid{grid-template-columns:1fr}
+  .products-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .hero__ctas{flex-direction:column}
+  .hero__ctas .btn{justify-content:center}
+  .trust-bar__inner{flex-wrap:wrap;gap:8px 0;justify-content:center}
+  .trust-item{flex:0 0 50%}
+  .trust-bar__divider{display:none}
+  .footer__cols{grid-template-columns:1fr 1fr}
+  .ugc-grid{grid-template-columns:repeat(2,1fr)}
+  .grid-2{grid-template-columns:1fr}
+  .footer__bottom{flex-direction:column;text-align:center}
+  .t2-quote{font-size:1.1rem}
+  .t2-nav{gap:16px}
+}
+</style>
+</head>
+<body>
+
+<!-- ╔══════════════════════════════════════════════════════════╗
+     ║  01 — ANNOUNCEMENT BAR                                   ║
+     ╚══════════════════════════════════════════════════════════╝ -->
+<div class="announce" id="announceBar">
+  <div class="container">
+    <div class="announce__track">
+      <div class="announce__msg active">
+        <span>Free shipping</span> on orders over $75
+        <span class="announce__dot"></span>
+        30-Day Money Back Guarantee
+        <span class="announce__dot"></span>
+        Doctor-Created, EWG Verified®
+      </div>
+      <div class="announce__msg">
+        New to the ritual? Start with our Liver Castor Oil Pack Kit — the one that started it all.
+        <a href="#" style="color:#7C094B;margin-left:8px;font-weight:600;text-decoration:underline">Shop Now →</a>
+      </div>
+      <div class="announce__msg">
+        Over 600 wellness clinics carry Queen of the Thrones®.
+        <a href="#" style="color:#7C094B;margin-left:8px;font-weight:600;text-decoration:underline">Find out why →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ╔══════════════════════════════════════════════════════════╗
+     ║  02 — NAVIGATION                                          ║
+     ╚══════════════════════════════════════════════════════════╝ -->
+<header class="site-header" id="siteHeader">
+  <div class="container">
+    <nav class="nav" aria-label="Main navigation">
+
+      <a href="/" class="nav__logo" aria-label="Queen of the Thrones Home">
+        <img src="Brand Identity (Logo, Fonts, Brand Guide)/Logos/8 - Black Logo/QOTT_Black_%23231f20_Stacked_Logo.png"
+             alt="Queen of the Thrones®" height="40">
+      </a>
+
+      <div class="nav__links">
+        <a href="#" class="nav__link">Shop</a>
+        <a href="#" class="nav__link">Rituals</a>
+        <a href="#" class="nav__link">Our Story</a>
+        <a href="#" class="nav__link nav__link--quiz">Find My Match</a>
+        <a href="#" class="nav__link">Learn</a>
+      </div>
+
+      <div class="nav__utils">
+        <button class="nav__icon" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.9999 20.9999L16.6599 16.6599M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"/></svg>
+        </button>
+        <button class="nav__icon" aria-label="Account">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 13C14.7614 13 17 10.7614 17 8C17 5.23858 14.7614 3 12 3C9.23858 3 7 5.23858 7 8C7 10.7614 9.23858 13 12 13ZM12 13C14.1217 13 16.1566 13.8429 17.6569 15.3431C19.1571 16.8434 20 18.8783 20 21M12 13C9.87827 13 7.84344 13.8429 6.34315 15.3431C4.84285 16.8434 4 18.8783 4 21"/></svg>
+        </button>
+        <button class="nav__icon" aria-label="Cart" style="position:relative">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 10C16 11.0609 15.5786 12.0783 14.8284 12.8284C14.0783 13.5786 13.0609 14 12 14C10.9391 14 9.92172 13.5786 9.17157 12.8284C8.42143 12.0783 8 11.0609 8 10M3.10303 6.03394H20.897M3.4 5.467C3.14036 5.81319 3 6.23426 3 6.667V20C3 20.5304 3.21071 21.0391 3.58579 21.4142C3.96086 21.7893 4.46957 22 5 22H19C19.5304 22 20.0391 21.7893 20.4142 21.4142C20.7893 21.0391 21 20.5304 21 20V6.667C21 6.23426 20.8596 5.81319 20.6 5.467L18.6 2.8C18.4137 2.55161 18.1721 2.35 17.8944 2.21115C17.6167 2.07229 17.3105 2 17 2H7C6.68951 2 6.38328 2.07229 6.10557 2.21115C5.82786 2.35 5.58629 2.55161 5.4 2.8L3.4 5.467Z"/></svg>
+          <span class="nav__cart-count" aria-label="0 items in cart">0</span>
+        </button>
+        <button class="nav__hamburger" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </nav>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu">
+  <button class="mobile-menu__close" id="menuClose" aria-label="Close menu">✕</button>
+  <nav class="mobile-menu__links">
+    <a href="#" class="mobile-menu__link">Shop</a>
+    <a href="#" class="mobile-menu__link">Rituals</a>
+    <a href="#" class="mobile-menu__link">Our Story</a>
+    <a href="#" class="mobile-menu__link">Find My Match</a>
+    <a href="#" class="mobile-menu__link">Learn</a>
+  </nav>
+  <div class="mobile-menu__cta">
+    <a href="#" class="btn btn-primary btn-full">Start Your Ritual</a>
+  </div>
+</div>
+
+<main>
+
+<!-- ╔══════════════════════════════════════════════════════════╗
+     ║  03 — HERO                                               ║
+     ║  📸 REPLACE: hero-banner.jpg (1440×900px recommended)    ║
+     ║  Direction: Woman in golden hour light, hands on         ║
+     ║  abdomen, soft linen, eyes softly closed. Not posed.     ║
+     ╚══════════════════════════════════════════════════════════╝ -->
+<section class="hero" aria-label="Hero">
+  <div class="hero__bg" style="background-image:url('Banners/Hero.webp');background-size:cover;background-position:center top;"></div>
+  <div class="hero__content">
+    <div class="container">
+      <div class="hero__inner">
+        <h1 class="t-display t-h1 hero__h1" data-reveal="up" data-delay="0.1">
+          Become the<br>true you.
+        </h1>
+        <p class="hero__sub" data-reveal="up" data-delay="0.2">
+          Reclaim your calm, restore your energy, and make self-care into a ritual.
+        </p>
+        <p class="hero__body" data-reveal="up" data-delay="0.3">
+          In a world of clones, becoming yourself is the rebellion. Choose rituals that nourish, balance, and invite you to reconnect with your body.
+        </p>
+        <div class="hero__ctas" data-reveal="up" data-delay="0.4">
+          <a href="#" class="btn btn-teal">Start Your Ritual</a>
+          <a href="#" class="btn btn-ghost" style="border-color:rgba(242,238,238,.6);color:white">Find My Match</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════════╗
+     ║  04 — TRUST BAR                                          ║
+     ╚══════════════════════════════════════════════════════════╝ -->
+<section class="trust-bar" aria-label="Trust signals">
+  <div class="container">
+    <div class="trust-bar__inner">
+      <div class="trust-item" data-reveal="up" data-delay="0">
+        <div class="trust-item__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12L11 14L15 10M20 13C20 18 16.5 20.5 12.34 21.95C12.1222 22.0238 11.8855 22.0202 11.67 21.94C7.5 20.5 4 18 4 13V5.99996C4 5.73474 4.10536 5.48039 4.29289 5.29285C4.48043 5.10532 4.73478 4.99996 5 4.99996C7 4.99996 9.5 3.79996 11.24 2.27996C11.4519 2.09896 11.7214 1.99951 12 1.99951C12.2786 1.99951 12.5481 2.09896 12.76 2.27996C14.51 3.80996 17 4.99996 19 4.99996C19.2652 4.99996 19.5196 5.10532 19.7071 5.29285C19.8946 5.48039 20 5.73474 20 5.99996V13Z"/></svg>
+        </div>
+        <span>USDA Certified Organic</span>
+      </div>
+      <div class="trust-bar__divider" aria-hidden="true"></div>
+      <div class="trust-item" data-reveal="up" data-delay="0.05">
+        <div class="trust-item__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.99927 12L10.9993 14L14.9993 10M3.84922 8.6201C3.27917 8.98085 2.80963 9.47992 2.48426 10.0709C2.1589 10.6618 1.98828 11.3255 1.98828 12.0001C1.98828 12.6747 2.1589 13.3384 2.48426 13.9293C2.80963 14.5203 3.27917 15.0193 3.84922 15.3801C3.70326 16.0376 3.72567 16.7213 3.91437 17.3678C4.10308 18.0143 4.45196 18.6027 4.92868 19.0784C5.40541 19.5541 5.99453 19.9018 6.64142 20.0891C7.28832 20.2765 7.97205 20.2974 8.62922 20.1501C8.99045 20.718 9.48914 21.1855 10.0791 21.5094C10.669 21.8333 11.3312 22.0032 12.0042 22.0032C12.6772 22.0032 13.3394 21.8333 13.9293 21.5094C14.5193 21.1855 15.018 20.718 15.3792 20.1501C16.0367 20.2961 16.7204 20.2736 17.3669 20.0849C18.0134 19.8962 18.6018 19.5473 19.0775 19.0706C19.5532 18.5939 19.9009 18.0048 20.0882 17.3579C20.2756 16.711 20.2966 16.0273 20.1492 15.3701C20.7149 15.0084 21.1805 14.5101 21.5029 13.9211C21.8254 13.3322 21.9944 12.6715 21.9944 12.0001C21.9944 11.3286 21.8254 10.668 21.5029 10.079C21.1805 9.4901 20.7149 8.99181 20.1492 8.6301C20.2972 7.97193 20.2763 7.28703 20.0885 6.6391C19.9007 5.99117 19.5521 5.40126 19.0751 4.92425C18.598 4.44724 18.0081 4.09862 17.3602 3.91081C16.7123 3.72301 16.0274 3.70212 15.3692 3.8501C15.0075 3.2844 14.5092 2.81886 13.9203 2.49638C13.3313 2.17391 12.6707 2.00488 11.9992 2.00488C11.3278 2.00488 10.6671 2.17391 10.0782 2.49638C9.48922 2.81886 8.99093 3.2844 8.62922 3.8501C7.97205 3.70276 7.28832 3.72374 6.64142 3.91109C5.99453 4.09844 5.40541 4.4461 4.92868 4.92182C4.45196 5.39754 4.10308 5.98593 3.91437 6.63244C3.72567 7.27894 3.70326 7.96262 3.84922 8.6201Z"/></svg>
+        </div>
+        <span>EWG Verified®</span>
+      </div>
+      <div class="trust-bar__divider" aria-hidden="true"></div>
+      <div class="trust-item" data-reveal="up" data-delay="0.1">
+        <div class="trust-item__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.0005 2V8C14.0003 8.33548 14.0846 8.66561 14.2455 8.96L19.7555 19.04C19.9221 19.3446 20.0066 19.6874 20.0006 20.0345C19.9946 20.3817 19.8984 20.7213 19.7213 21.02C19.5442 21.3187 19.2924 21.5661 18.9907 21.7379C18.6889 21.9098 18.3477 22.0001 18.0005 22H6.00046C5.65324 22.0001 5.31198 21.9098 5.01025 21.7379C4.70853 21.5661 4.45674 21.3187 4.27965 21.02C4.10257 20.7213 4.00629 20.3817 4.0003 20.0345C3.9943 19.6874 4.0788 19.3446 4.24546 19.04L9.75546 8.96C9.91635 8.66561 10.0006 8.33548 10.0005 8V2M6.45337 15H17.5474M8.50049 2H15.5005"/></svg>
+        </div>
+        <span>Third-Party Tested</span>
+      </div>
+      <div class="trust-bar__divider" aria-hidden="true"></div>
+      <div class="trust-item" data-reveal="up" data-delay="0.15">
+        <div class="trust-item__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5.99878 12C6.86426 11.3509 7.91693 11 8.99878 11C10.0806 11 11.1333 11.3509 11.9988 12C12.8643 12.6491 13.9169 13 14.9988 13C16.0806 13 17.1333 12.6491 17.9988 12M5.1148 4.104C5.10023 3.96471 5.11509 3.82392 5.1584 3.69074C5.20171 3.55756 5.27251 3.43496 5.36621 3.33089C5.45992 3.22681 5.57444 3.14358 5.70236 3.08658C5.83029 3.02958 5.96875 3.00008 6.1088 3H17.8888C18.0289 3.00007 18.1675 3.02959 18.2955 3.08665C18.4235 3.14371 18.5381 3.22703 18.6318 3.33122C18.7255 3.43541 18.7963 3.55813 18.8395 3.69143C18.8828 3.82473 18.8975 3.96564 18.8828 4.105L17.1888 20.21C17.1369 20.7015 16.9048 21.1564 16.5374 21.487C16.1699 21.8175 15.6931 22.0003 15.1988 22H8.7988C8.30282 22.0027 7.82352 21.8211 7.45394 21.4903C7.08436 21.1595 6.85087 20.7032 6.7988 20.21L5.1148 4.104Z"/></svg>
+        </div>
+        <span>Glass Bottled, Never Plastic</span>
+      </div>
+      <div class="trust-bar__divider" aria-hidden="true"></div>
+      <div class="trust-item" data-reveal="up" data-delay="0.2">
+        <div class="trust-item__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 21C2 18 3.85 15.64 7.08 15C9.5 14.52 12 13 13 12M11 20C9.24404 20.0053 7.55023 19.3505 6.2545 18.1654C4.95876 16.9803 4.15575 15.3515 4.00471 13.6021C3.85368 11.8527 4.36567 10.1104 5.43913 8.72074C6.51259 7.33112 8.06911 6.3957 9.79998 6.1C15.5 5 17 4.48 19 2C20 4 21 6.18 21 10C21 15.5 16.22 20 11 20Z"/></svg>
+        </div>
+        <span>Hexane-Free</span>
+      </div>
+    </div>
+    <p style="text-align:center;color:rgba(16,46,52,.55);font-size:.8125rem;margin-top:16px;letter-spacing:.03em">
+      Every product in our ritual line meets the standard we set for our own families. Nothing less.
+    </p>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════════╗
+     ║  05 — SHOP BY RITUAL                                     ║
+     ╚══════════════════════════════════════════════════════════╝ -->
+<section class="rituals section-pad" id="rituals" aria-labelledby="ritualsHeading">
+  <div class="container">
+    <div class="section-header text-center" data-reveal="up">
+      <span class="section-label">Find Your Practice</span>
+      <h2 class="t-display t-h2" id="ritualsHeading" style="color:var(--electric)">Every Queen has<br>her ritual.</h2>
+      <p class="t-body-lg" style="color:var(--text-mid);max-width:560px;margin:16px auto 0">
+        Find the practice that fits your body, your day, and your intention. Rebel against the rush, and return to yourself.
+      </p>
+    </div>
+    <div class="rituals-grid">
+      <article class="ritual-card" data-reveal="up" data-delay="0">
+        <img class="ritual-card__img" src="Brand Assets/Photos/JPG/Bathroom COP/_MG_6154.jpg" alt="The Liver Ritual — Castor Oil Pack application" loading="lazy">
+        <div class="ritual-card__overlay"></div>
+        <div class="ritual-card__body">
+          <span class="ritual-card__tag">Bestseller</span>
+          <h3 class="ritual-card__title t-display">The Liver Ritual</h3>
+          <p class="ritual-card__sub">The grounding, restoring ritual that began it all.</p>
+          <a href="#" class="ritual-card__link">
+            Explore the Liver Ritual
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </article>
+      <article class="ritual-card" data-reveal="up" data-delay="0.08">
+        <img class="ritual-card__img" src="Brand Assets/Photos/JPG/Wrinkle Roller/_MG_5164.jpg" alt="The Beauty Ritual — Rose Quartz Roller" loading="lazy">
+        <div class="ritual-card__overlay"></div>
+        <div class="ritual-card__body">
+          <span class="ritual-card__tag">Beauty</span>
+          <h3 class="ritual-card__title t-display">The Beauty Ritual</h3>
+          <p class="ritual-card__sub">For the skin you want to live in.</p>
+          <a href="#" class="ritual-card__link">
+            Explore the Beauty Ritual
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </article>
+      <article class="ritual-card" data-reveal="up" data-delay="0.16">
+        <img class="ritual-card__img" src="Brand Assets/Photos/JPG/Hair/_MG_5331.jpg" alt="The Hair Ritual — Castor Oil for Hair" loading="lazy">
+        <div class="ritual-card__overlay"></div>
+        <div class="ritual-card__body">
+          <span class="ritual-card__tag">Hair</span>
+          <h3 class="ritual-card__title t-display">The Hair Ritual</h3>
+          <p class="ritual-card__sub">The castor oil secret, passed down for generations.</p>
+          <a href="#" class="ritual-card__link">
+            Explore the Hair Ritual
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </article>
+      <article class="ritual-card" data-reveal="up" data-delay="0.24">
+        <img class="ritual-card__img" src="Brand Assets/Photos/JPG/Pelvic/_MG_3543.jpg" alt="The Pelvic Ritual — Pelvic Castor Oil Pack" loading="lazy">
+        <div class="ritual-card__overlay"></div>
+        <div class="ritual-card__body">
+          <span class="ritual-card__tag">Pelvic</span>
+          <h3 class="ritual-card__title t-display">The Pelvic Ritual</h3>
+          <p class="ritual-card__sub">Support your center. Flow returns when you give it space.</p>
+          <a href="#" class="ritual-card__link">
+            Explore the Pelvic Ritual
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </article>
+    </div>
+    <p class="rituals__cta" data-reveal="up">
+      Not sure where to begin? <a href="#">Take the Ritual Quiz →</a>
+    </p>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════════╗
+     ║  06 — BEST SELLERS                                       ║
+     ╚══════════════════════════════════════════════════════════╝ -->
+<section class="best-sellers section-pad" id="shop" aria-labelledby="bestSellersHeading">
+  <div class="container">
+    <div class="section-header text-center" data-reveal="up">
+      <span class="section-label" style="color:#103434">Most Loved</span>
+      <h2 class="t-display t-h2" id="bestSellersHeading" style="color:var(--teal)">The rituals women return to,<br>again and again.</h2>
+      <p class="t-body-lg" style="color:var(--text-mid);max-width:560px;margin:16px auto 0">
+        Doctor-created, and used in real bodies, real rituals, and real life.
+      </p>
+    </div>
+    <div class="products-grid">
+
+      <!-- Product 1 — Liver Castor Oil Pack -->
+      <article class="product-card" data-reveal="up" data-delay="0">
+        <div class="product-card__image-wrap">
+          <img src="Brand Assets/Photos/JPG/COP/_MG_2991.jpg" alt="Liver Castor Oil Pack by Queen of the Thrones" loading="lazy">
+          <span class="product-card__badge">Best Seller</span>
+          <button class="product-card__wishlist" aria-label="Add to wishlist">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+          <div class="product-card__quick-view">Quick View</div>
+        </div>
+        <div class="product-card__body">
+          <div class="product-card__rating">
+            <span class="product-card__stars" aria-label="5 stars">★★★★★</span>
+            <span class="product-card__rating-num">4.9</span>
+            <span class="product-card__rating-count">(3,241)</span>
+          </div>
+          <h3 class="product-card__name">Liver Castor Oil Pack</h3>
+          <p class="product-card__tagline">The ritual that grounds you.</p>
+          <p class="product-card__desc">The nightly practice that helps your body remember how to rest. Includes organic flannel + comfortable wrap.</p>
+          <div class="product-card__footer">
+            <div>
+              <span class="product-card__price">$59.99</span>
+            </div>
+            <button class="btn-ritual" aria-label="Add Liver Castor Oil Pack to cart">
+              <span>Add to Ritual</span>
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 2 — Organic Golden Castor Oil -->
+      <article class="product-card" data-reveal="up" data-delay="0.08">
+        <div class="product-card__image-wrap">
+          <img src="Brand Assets/Product Photography/500mL Golden Castor Oil/Straight On Shot/JPG/QOTT_500mL_Golden_CastorOil_USA.jpg" alt="Organic Golden Castor Oil 500mL" loading="lazy">
+          <span class="product-card__badge">Top Rated</span>
+          <button class="product-card__wishlist" aria-label="Add to wishlist">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+          <div class="product-card__quick-view">Quick View</div>
+        </div>
+        <div class="product-card__body">
+          <div class="product-card__rating">
+            <span class="product-card__stars" aria-label="5 stars">★★★★★</span>
+            <span class="product-card__rating-num">4.9</span>
+            <span class="product-card__rating-count">(2,871)</span>
+          </div>
+          <h3 class="product-card__name">Organic Golden Castor Oil</h3>
+          <p class="product-card__tagline">Pure &amp; cold-pressed</p>
+          <p class="product-card__desc">USDA Organic hexane-free castor oil for skin, hair, lashes, and the rituals you return to every week.</p>
+          <div class="product-card__footer">
+            <div>
+              <span class="product-card__price">$34.99</span>
+            </div>
+            <button class="btn-ritual" aria-label="Add Organic Golden Castor Oil to cart">
+              <span>Add to Ritual</span>
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 3 — Lash & Brow Wand (100mL Dropper) -->
+      <article class="product-card" data-reveal="up" data-delay="0.16">
+        <div class="product-card__image-wrap">
+          <img src="Brand Assets/Product Photography/100mL Golden Dropper/Straight On Shot/JPG/QOTT_100mL_Golden_Dropper_USA.jpg" alt="Lash & Brow Castor Oil Wand" loading="lazy">
+          <button class="product-card__wishlist" aria-label="Add to wishlist">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+          <div class="product-card__quick-view">Quick View</div>
+        </div>
+        <div class="product-card__body">
+          <div class="product-card__rating">
+            <span class="product-card__stars" aria-label="5 stars">★★★★★</span>
+            <span class="product-card__rating-num">4.8</span>
+            <span class="product-card__rating-count">(1,594)</span>
+          </div>
+          <h3 class="product-card__name">Lash &amp; Brow Wand</h3>
+          <p class="product-card__tagline">The beauty ritual, simplified.</p>
+          <p class="product-card__desc">Fortify your lashes with golden castor oil using the mess-free, easy-application wand. 100mL of pure organic oil.</p>
+          <div class="product-card__footer">
+            <div>
+              <span class="product-card__price">$24.99</span>
+            </div>
+            <button class="btn-ritual" aria-label="Add Lash & Brow Wand to cart">
+              <span>Add to Ritual</span>
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 4 — Rose Quartz Roll-On -->
+      <article class="product-card" data-reveal="up" data-delay="0.24">
+        <div class="product-card__image-wrap">
+          <img src="Brand Assets/Product Photography/50mL Rose Quartz Roller/Straight On Shot/JPG/QOTT_50mL_RoseQuartzRoller_USA.jpg" alt="Rose Quartz Roll-On Castor Oil" loading="lazy">
+          <span class="product-card__badge" style="background:var(--coral)">New</span>
+          <button class="product-card__wishlist" aria-label="Add to wishlist">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+          <div class="product-card__quick-view">Quick View</div>
+        </div>
+        <div class="product-card__body">
+          <div class="product-card__rating">
+            <span class="product-card__stars" aria-label="5 stars">★★★★★</span>
+            <span class="product-card__rating-num">4.9</span>
+            <span class="product-card__rating-count">(987)</span>
+          </div>
+          <h3 class="product-card__name">Rose Quartz Roll-On</h3>
+          <p class="product-card__tagline">Anoint. Absorb. Awaken.</p>
+          <p class="product-card__desc">Cold-rolling castor oil for the face, the lymph, the moment you decide to slow down. 50mL with real rose quartz.</p>
+          <div class="product-card__footer">
+            <div>
+              <span class="product-card__price">$29.99</span>
+            </div>
+            <button class="btn-ritual" aria-label="Add Rose Quartz Roll-On to cart">
+              <span>Add to Ritual</span>
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /products-grid -->
+    <div class="text-center" style="margin-top:40px" data-reveal="up">
+      <a href="#" class="btn btn-ghost">Shop All Products →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════════╗
+     ║  07 — CAMPAIGN BANNER                                    ║
+     ║  📸 REPLACE: campaign-banner.jpg (1440×560px)            ║
+     ║  Direction: Full-width editorial, warm & atmospheric     ║
+     ╚══════════════════════════════════════════════════════════╝ -->
+<section class="campaign" aria-labelledby="campaignHeading">
+  <div class="container">
+    <div class="campaign__layout">
+      <div class="campaign__content" data-reveal="left">
+        <p class="campaign__eyebrow t-caps">Ancient Wisdom · Modern Ritual</p>
+        <h2 class="t-display t-h2 campaign__h2" id="campaignHeading">
+          Before the crown<br>came the oil.
+        </h2>
+        <p class="campaign__body">
+          For thousands of years, women have used castor oil to nourish, ground, and restore. Queen of the Thrones® brings that practice home and makes it yours.
+        </p>
+        <p class="campaign__body" style="margin-top:-16px">
+          Your body is not a lab. You are not a template. Return to ancient self-care practices that support natural beauty.
+        </p>
+        <div class="campaign__cta-group">
+          <a href="#" class="btn btn-gold">Discover the Science + Story</a>
+          <a href="#" class="btn btn-ghost">Our Story</a>
+        </div>
+      </div>
+      <div class="campaign__image" data-reveal="right">
+        <img src="Brand Assets/Product Photography/All_Oils_Together no bg.png" alt="Queen of the Thrones — Organic Castor Oil collection" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════════╗
+     ║  08 — MANIFESTO STRIP                                    ║
+     ╚══════════════════════════════════════════════════════════╝ -->
+<section class="manifesto" aria-label="Brand manifesto">
+  <div class="container">
+    <div class="manifesto__accent" data-reveal="scale"></div>
+    <div class="manifesto__text" id="manifestoText" data-reveal="up">
+      <span class="manifesto__line"><em>We don't freeze;</em></span>
+      <br>
+      <span class="manifesto__line"><em>we flow.</em></span>
+      <br>
+      <span class="manifesto__line"><span class="gold">Most beauty is programmed.</span></span>
+      <br>
+      <span class="manifesto__line"><em>True beauty is chosen.</em></span>
+      <br>
+      <span class="manifesto__line"><span class="gold">This is the Royal Ritual.</span></span>
+    </div>
+    <div class="manifesto__logo" data-reveal="up" data-delay="0.5">
+      <img src="Brand Identity (Logo, Fonts, Brand Guide)/Logos/1 - Teal %2373C7C9/QOTT_Teal_%2373C7C9_Stacked_Logo.png" alt="Queen of the Thrones®" height="72">
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════════╗
+     ║  09 — HOW THE RITUAL WORKS                               ║
+     ╚══════════════════════════════════════════════════════════╝ -->
+<section class="how-it-works section-pad" aria-labelledby="howHeading">
+  <div class="container">
+    <div class="how-it-works__layout">
+      <div class="steps-col">
+        <div data-reveal="up">
+          <span class="section-label">Simple. Intentional. Yours.</span>
+          <h2 class="t-display t-h2" id="howHeading" style="color:var(--primary)">The ritual in<br>three steps.</h2>
+          <p class="t-body-lg" style="color:var(--text-mid);margin-top:12px;margin-bottom:40px">
+            Less mess. More intention. Designed for real life, not the version you perform for other people.
+          </p>
+        </div>
+        <div class="steps">
+          <div class="step" data-reveal="up" data-delay="0.1">
+            <div class="step__num">01</div>
+            <div class="step__content">
+              <h3 class="step__title">Anoint</h3>
+              <p class="step__body">Pour a small amount of organic castor oil onto the flannel pack. Use one to two tablespoons.</p>
+              <p class="step__detail">This is the oil your skin has been waiting for.</p>
+            </div>
+          </div>
+          <div class="step" data-reveal="up" data-delay="0.2">
+            <div class="step__num">02</div>
+            <div class="step__content">
+              <h3 class="step__title">Place &amp; Cocoon</h3>
+              <p class="step__body">Apply the pack to your body and secure it with the comfortable wrap. Liver area, pelvic area, thyroid—wherever you need to return to yourself.</p>
+            </div>
+          </div>
+          <div class="step" data-reveal="up" data-delay="0.3">
+            <div class="step__num">03</div>
+            <div class="step__content">
+              <h3 class="step__title">Rest &amp; Receive</h3>
+              <p class="step__body">30–60 minutes. Heat is optional. Let your body do the rest.</p>
+              <p class="step__detail">This is where the ritual begins. Not in the doing, but in the allowing.</p>
+            </div>
+          </div>
+        </div>
+        <div class="how-it-works__ctas" data-reveal="up" data-delay="0.4">
+          <a href="#" class="btn btn-primary">Start My Ritual</a>
+          <a href="#" class="btn btn-ghost">Watch It in Action →</a>
+        </div>
+      </div>
+      <div class="how-it-works__img" data-reveal="right">
+        <img src="Brand Assets/Photos/JPG/Bathroom COP/_MG_6156.jpg" alt="Woman applying castor oil pack ritual" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════════╗
+     ║  10 — WHY QUEEN OF THE THRONES?                          ║
+     ╚══════════════════════════════════════════════════════════╝ -->
+<section class="why section-pad" aria-labelledby="whyHeading">
+  <div class="container">
+    <div class="section-header text-center" data-reveal="up">
+      <span class="section-label">Our Difference</span>
+      <h2 class="t-display t-h2" id="whyHeading" style="color:var(--teal)">We're not here to add<br>to your routine.</h2>
+      <p class="t-h4 t-display" style="color:var(--teal);margin-top:12px;font-weight:400">We're here to replace it with something that matters.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card" data-reveal="up" data-delay="0">
+        <div class="why-card__icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <p class="why-card__num">01</p>
+        <h3 class="why-card__title">Created by a doctor</h3>
+        <p class="why-card__body">Dr. Marisol Teijeiro, naturopathic doctor, former beauty queen, and founder, designed these products for herself—and for every woman who deserved better than what wellness culture was selling.</p>
+      </div>
+      <div class="why-card" data-reveal="up" data-delay="0.08">
+        <div class="why-card__icon">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <p class="why-card__num">02</p>
+        <h3 class="why-card__title">Clean by every standard</h3>
+        <p class="why-card__body">If we wouldn't use it on our own children, it wouldn't become a product. USDA Organic, EWG Verified®, third-party tested, glass-bottled, and hexane-free.</p>
+      </div>
+      <div class="why-card" data-reveal="up" data-delay="0.16">
+        <div class="why-card__icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <p class="why-card__num">03</p>
+        <h3 class="why-card__title">Ritual, not protocol</h3>
+        <p class="why-card__body">This isn't a 12-step system or a subscription you sign up for. It's a single, intentional practice done consistently, with presence. The simplest rituals are the ones you actually keep.</p>
+      </div>
+      <div class="why-card" data-reveal="up" data-delay="0.24">
+        <div class="why-card__icon">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <p class="why-card__num">04</p>
+        <h3 class="why-card__title">Your body's wisdom</h3>
+        <p class="why-card__body">We don't tell your body what to do—we give it the tools to remember what it already knows. Every product is designed to support natural systems, not override them.</p>
+      </div>
+    </div>
+    <div class="text-center" style="margin-top:48px" data-reveal="up">
+      <a href="#" class="btn btn-primary">Read Our Story</a>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════════╗
+     ║  11 — REVIEWS / TESTIMONIALS (Beam-style slider)         ║
+     ╚══════════════════════════════════════════════════════════╝ -->
+<section class="testimonials section-pad" aria-labelledby="reviewsHeading">
+  <div class="container">
+    <div class="section-header text-center" data-reveal="up">
+      <span class="section-label">Real Women. Real Rituals.</span>
+      <h2 class="t-display t-h2" id="reviewsHeading" style="color:var(--primary)">What happens when<br>you choose ritual.</h2>
+    </div>
+
+    <div class="t2-slider" id="t2Slider" aria-live="polite" data-reveal="up">
+
+      <!-- Slide 1 -->
+      <div class="t2-slide active" role="group" aria-label="Testimonial 1 of 3">
+        <span class="t2-openquote" aria-hidden="true">&ldquo;</span>
+        <p class="t2-quote">I've tried every wellness trend in the last five years. This is the first one I've kept. Not because it's magic — because it makes me feel like I am.</p>
+        <div class="t2-author">
+          <img class="t2-avatar" src="Brand Assets/Photos/JPG/Day Night Detox/_MG_4430.jpg" alt="Jamie R." loading="lazy">
+          <div>
+            <div class="t2-stars" aria-label="5 stars">★★★★★</div>
+            <p class="t2-name">Jamie R.</p>
+            <p class="t2-meta">Austin, TX · Beauty Holistic</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="t2-slide" role="group" aria-label="Testimonial 2 of 3">
+        <span class="t2-openquote" aria-hidden="true">&ldquo;</span>
+        <p class="t2-quote">I'm a highly sensitive person. Most 'wellness' products overstimulate me. The liver ritual is the one thing I do every night that feels genuinely safe. I look forward to it the way I look forward to breathing.</p>
+        <div class="t2-author">
+          <img class="t2-avatar" src="Brand Assets/Photos/JPG/COP/_MG_2992.jpg" alt="Renata M." loading="lazy">
+          <div>
+            <div class="t2-stars" aria-label="5 stars">★★★★★</div>
+            <p class="t2-name">Renata M.</p>
+            <p class="t2-meta">Sedona, AZ · Spiritual Holistic</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="t2-slide" role="group" aria-label="Testimonial 3 of 3">
+        <span class="t2-openquote" aria-hidden="true">&ldquo;</span>
+        <p class="t2-quote">I'm a functional medicine practitioner. I recommend castor oil packs to patients regularly. Queen of the Thrones® is the only brand I trust enough to carry in my clinic — and the only one my patients actually stick with.</p>
+        <div class="t2-author">
+          <img class="t2-avatar" src="Brand Assets/Photos/JPG/Thyroid/_MG_3011.jpg" alt="Dr. Sarah K." loading="lazy">
+          <div>
+            <div class="t2-stars" aria-label="5 stars">★★★★★</div>
+            <p class="t2-name">Dr. Sarah K.</p>
+            <p class="t2-meta">Boulder, CO · Functional Medicine</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /t2-slider -->
+
+    <!-- Navigation -->
+    <div class="t2-nav" data-reveal="up">
+      <button class="t2-arrow" id="t2Prev" aria-label="Previous testimonial">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="t2-dots" role="tablist" aria-label="Testimonial navigation">
+        <button class="t2-dot active" data-index="0" role="tab" aria-selected="true" aria-label="Testimonial 1"></button>
+        <button class="t2-dot" data-index="1" role="tab" aria-selected="false" aria-label="Testimonial 2"></button>
+        <button class="t2-dot" data-index="2" role="tab" aria-selected="false" aria-label="Testimonial 3"></button>
+      </div>
+      <button class="t2-arrow" id="t2Next" aria-label="Next testimonial">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+
+    <div class="testimonials__cta" data-reveal="up">
+      <a href="#" class="btn btn-ghost">Read More Reviews →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════════╗
+     ║  12 — INSTAGRAM / UGC GRID                               ║
+     ╚══════════════════════════════════════════════════════════╝ -->
+<section class="ugc section-pad-sm" aria-labelledby="ugcHeading">
+  <div class="container">
+    <div class="section-header text-center" data-reveal="up">
+      <span class="section-label">@queenofthethrones</span>
+      <h2 class="t-display t-h2" id="ugcHeading" style="color:var(--primary)">The Queendom is<br>already thriving.</h2>
+      <p class="t-body-lg" style="color:var(--text-mid);max-width:480px;margin:16px auto 0">
+        Join 2,500+ partners and a community of women who chose to do wellness differently.
+      </p>
+    </div>
+    <div class="ugc-grid" data-reveal="scale">
+      <div class="ugc-item">
+        <img src="Brand Assets/Photos/JPG/Bathroom COP/_MG_6158.jpg" alt="Castor oil pack ritual in bathroom" loading="lazy">
+        <div class="ugc-item__overlay">
+          <span class="ugc-item__icon">♡</span>
+          <span class="ugc-item__icon">👁</span>
+        </div>
+      </div>
+      <div class="ugc-item">
+        <img src="Brand Assets/Photos/JPG/Day Night Detox/_MG_4433.jpg" alt="Day and night detox ritual" loading="lazy">
+        <div class="ugc-item__overlay">
+          <span class="ugc-item__icon">♡</span>
+          <span class="ugc-item__icon">👁</span>
+        </div>
+      </div>
+      <div class="ugc-item">
+        <img src="Brand Assets/Photos/JPG/Energy Cleanse/_MG_6410.jpg" alt="Energy cleanse ritual" loading="lazy">
+        <div class="ugc-item__overlay">
+          <span class="ugc-item__icon">♡</span>
+          <span class="ugc-item__icon">👁</span>
+        </div>
+      </div>
+      <div class="ugc-item">
+        <img src="Brand Assets/Photos/JPG/Roller/_MG_5563.jpg" alt="Rose quartz roller ritual" loading="lazy">
+        <div class="ugc-item__overlay">
+          <span class="ugc-item__icon">♡</span>
+          <span class="ugc-item__icon">👁</span>
+        </div>
+      </div>
+      <div class="ugc-item">
+        <img src="Brand Assets/Photos/JPG/Family/_MG_3292.jpg" alt="Family wellness ritual" loading="lazy">
+        <div class="ugc-item__overlay">
+          <span class="ugc-item__icon">♡</span>
+          <span class="ugc-item__icon">👁</span>
+        </div>
+      </div>
+      <!-- CTA tile replaces 6th photo -->
+      <div class="ugc-cta">
+        <h3 class="t-display" style="font-size:1.5rem;color:white">Join the<br>Queendom</h3>
+        <p>Tag @queenofthethrones and use<br>#RoyalRitualRebellion</p>
+        <a href="#" class="btn btn-gold btn-sm">Follow Our Ritual</a>
+      </div>
+    </div>
+    <p class="ugc__tag text-center" data-reveal="up">#RoyalRitualRebellion</p>
+  </div>
+</section>
+
+</main><!-- /main -->
+
+<!-- ╔══════════════════════════════════════════════════════════╗
+     ║  13 — FOOTER                                             ║
+     ╚══════════════════════════════════════════════════════════╝ -->
+<footer class="site-footer" aria-label="Site footer">
+
+  <!-- Newsletter -->
+  <div class="footer__newsletter">
+    <div class="container">
+      <div class="footer__nl-inner">
+        <div>
+          <h3 class="footer__nl-heading">Every Queen deserves<br>her weekly ritual.</h3>
+          <p class="footer__nl-sub">Rituals, education, and an occasional dose of royalty, delivered once a week. No noise.</p>
+        </div>
+        <div>
+          <form class="footer__nl-form" onsubmit="return false;" aria-label="Newsletter signup">
+            <label for="nlEmail" class="sr-only">Email address</label>
+            <input id="nlEmail" type="email" class="footer__nl-input" placeholder="Your email address" autocomplete="email" required>
+            <button type="submit" class="btn btn-teal footer__nl-btn">Claim Your Crown &amp; Save 10%</button>
+          </form>
+          <p class="footer__nl-note">No spam. Just ritual. Unsubscribe any time.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main footer -->
+  <div class="footer__main">
+    <div class="container">
+      <div class="footer__cols">
+        <!-- Brand -->
+        <div class="footer__brand">
+          <a href="/" aria-label="Queen of the Thrones Home" class="nav__logo">
+            <img src="Brand Identity (Logo, Fonts, Brand Guide)/Logos/7 - White Logo/QOTT_White%23FFFFFF_Stacked_Logo.png"
+                 alt="Queen of the Thrones®" height="44">
+          </a>
+          <p>Ancient ritual. Modern science. Your body, remembered.</p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="TikTok">
+              <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.69a8.2 8.2 0 0 0 4.81 1.54V6.78a4.85 4.85 0 0 1-1.05-.09z"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Pinterest">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.04-2.83.18-.77 1.23-5.22 1.23-5.22s-.31-.63-.31-1.56c0-1.46.85-2.55 1.9-2.55.9 0 1.33.67 1.33 1.48 0 .9-.58 2.26-.87 3.51-.25 1.04.52 1.89 1.54 1.89 1.85 0 3.08-2.37 3.08-5.17 0-2.13-1.44-3.73-4.04-3.73-2.94 0-4.77 2.2-4.77 4.66 0 .84.24 1.44.62 1.9.17.21.2.29.14.53-.04.17-.14.58-.18.74-.06.24-.23.33-.43.24-1.61-.66-2.36-2.44-2.36-4.44 0-3.28 2.77-7.2 8.27-7.2 4.42 0 7.34 3.21 7.34 6.66 0 4.55-2.52 7.95-6.22 7.95-1.25 0-2.42-.67-2.82-1.44l-.77 2.96c-.25.98-.78 1.97-1.24 2.74.94.29 1.93.44 2.96.44 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="YouTube">
+              <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+            </a>
+          </div>
+        </div>
+        <!-- Shop -->
+        <div class="footer__col">
+          <h5>Shop</h5>
+          <ul>
+            <li><a href="#">Castor Oil Packs</a></li>
+            <li><a href="#">Organic Castor Oil</a></li>
+            <li><a href="#">Beauty Tools</a></li>
+            <li><a href="#">Starter Kits</a></li>
+            <li><a href="#">All Products</a></li>
+          </ul>
+        </div>
+        <!-- Explore -->
+        <div class="footer__col">
+          <h5>Explore</h5>
+          <ul>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">The Science</a></li>
+            <li><a href="#">Find My Match</a></li>
+            <li><a href="#">Wholesale &amp; Clinics</a></li>
+            <li><a href="#">Affiliate Program</a></li>
+          </ul>
+        </div>
+        <!-- Support -->
+        <div class="footer__col">
+          <h5>Support</h5>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Shipping &amp; Returns</a></li>
+            <li><a href="#">30-Day Guarantee</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <!-- Legal -->
+        <div class="footer__col">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Accessibility</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__tagline">Queen of the Thrones® — Before the crown came the oil.</p>
+        <div class="footer__trust">
+          <span class="footer__trust-item">USDA Organic</span>
+          <span class="footer__trust-item">EWG Verified®</span>
+          <span class="footer__trust-item">Glass Bottled</span>
+          <span class="footer__trust-item">Doctor-Created</span>
+        </div>
+        <div class="footer__legal">
+          <a href="#">© 2026 Queen of the Thrones®</a>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── SCREEN READER ONLY ─────────────────────────────── -->
+<style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style>
+
+<!-- ══════════════════════════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════════════════════════ -->
+<script>
+(function () {
+  'use strict';
+
+  /* ── Announcement bar rotation ─────────────────────────── */
+  const msgs = document.querySelectorAll('.announce__msg');
+  let cur = 0;
+  if (msgs.length > 1) {
+    setInterval(() => {
+      msgs[cur].classList.remove('active');
+      cur = (cur + 1) % msgs.length;
+      msgs[cur].classList.add('active');
+    }, 4500);
+  }
+
+  /* ── Header: scrolled class + announce-bar offset ──────── */
+  const header = document.getElementById('siteHeader');
+  const announceH = () => document.getElementById('announceBar')?.offsetHeight || 0;
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > announceH() + 10);
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* ── Mobile menu ────────────────────────────────────────── */
+  const menuToggle = document.getElementById('menuToggle');
+  const menuClose  = document.getElementById('menuClose');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const body = document.body;
+
+  function openMenu() {
+    mobileMenu.classList.add('open');
+    mobileMenu.style.display = 'flex';
+    body.style.overflow = 'hidden';
+    menuToggle.setAttribute('aria-expanded', 'true');
+  }
+  function closeMenu() {
+    mobileMenu.classList.remove('open');
+    body.style.overflow = '';
+    menuToggle.setAttribute('aria-expanded', 'false');
+    setTimeout(() => { if (!mobileMenu.classList.contains('open')) mobileMenu.style.display = 'none'; }, 350);
+  }
+  menuToggle?.addEventListener('click', openMenu);
+  menuClose?.addEventListener('click', closeMenu);
+  mobileMenu?.addEventListener('click', e => { if (e.target === mobileMenu) closeMenu(); });
+
+  /* ── Scroll reveal (IntersectionObserver) ───────────────── */
+  const revealEls = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const delay = parseFloat(entry.target.dataset.delay || 0) * 1000;
+        setTimeout(() => entry.target.classList.add('revealed'), delay);
+        obs.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -48px 0px' });
+    revealEls.forEach(el => obs.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('revealed'));
+  }
+
+  /* ── Size pill selector ─────────────────────────────────── */
+  document.querySelectorAll('.product-card__sizes').forEach(wrap => {
+    wrap.addEventListener('click', e => {
+      const pill = e.target.closest('.size-pill');
+      if (!pill) return;
+      wrap.querySelectorAll('.size-pill').forEach(p => {
+        p.classList.remove('active');
+        p.setAttribute('aria-pressed', 'false');
+      });
+      pill.classList.add('active');
+      pill.setAttribute('aria-pressed', 'true');
+    });
+  });
+
+  /* ── Wishlist toggle ────────────────────────────────────── */
+  document.querySelectorAll('.product-card__wishlist').forEach(btn => {
+    btn.addEventListener('click', function () {
+      this.classList.toggle('wished');
+      const isWished = this.classList.contains('wished');
+      this.setAttribute('aria-label', isWished ? 'Remove from wishlist' : 'Add to wishlist');
+      // Pulse animation
+      this.style.transform = 'scale(1.3)';
+      setTimeout(() => this.style.transform = '', 200);
+    });
+  });
+
+  /* ── Add to Ritual button ───────────────────────────────── */
+  document.querySelectorAll('.btn-ritual').forEach(btn => {
+    btn.addEventListener('click', function () {
+      if (this.classList.contains('adding') || this.classList.contains('added')) return;
+      const span = this.querySelector('span');
+      const orig = span.textContent;
+      this.classList.add('adding');
+      span.textContent = 'Adding…';
+      setTimeout(() => {
+        this.classList.remove('adding');
+        this.classList.add('added');
+        span.textContent = 'Added ✓';
+        setTimeout(() => {
+          this.classList.remove('added');
+          span.textContent = orig;
+        }, 2200);
+      }, 900);
+    });
+  });
+
+  /* ── Manifesto word-by-word reveal ─────────────────────── */
+  const manifesto = document.getElementById('manifestoText');
+  if (manifesto) {
+    const mObs = new IntersectionObserver(entries => {
+      if (!entries[0].isIntersecting) return;
+      manifesto.querySelectorAll('.manifesto__line').forEach((line, i) => {
+        setTimeout(() => line.style.opacity = '1', i * 180);
+      });
+      mObs.unobserve(manifesto);
+    }, { threshold: 0.3 });
+    manifesto.querySelectorAll('.manifesto__line').forEach(line => line.style.opacity = '0');
+    mObs.observe(manifesto);
+  }
+
+  /* ── Testimonial slider (Beam style) ───────────────────── */
+  (function () {
+    const slides = document.querySelectorAll('.t2-slide');
+    const dots   = document.querySelectorAll('.t2-dot');
+    if (!slides.length) return;
+    let cur = 0;
+
+    function goTo(idx) {
+      slides[cur].classList.remove('active');
+      dots[cur].classList.remove('active');
+      dots[cur].setAttribute('aria-selected', 'false');
+      cur = (idx + slides.length) % slides.length;
+      slides[cur].classList.add('active');
+      dots[cur].classList.add('active');
+      dots[cur].setAttribute('aria-selected', 'true');
+    }
+
+    document.getElementById('t2Prev')?.addEventListener('click', () => goTo(cur - 1));
+    document.getElementById('t2Next')?.addEventListener('click', () => goTo(cur + 1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+
+    /* Auto-advance every 6 s, pause on hover */
+    let timer = setInterval(() => goTo(cur + 1), 6000);
+    const slider = document.getElementById('t2Slider');
+    slider?.addEventListener('mouseenter', () => clearInterval(timer));
+    slider?.addEventListener('mouseleave', () => { timer = setInterval(() => goTo(cur + 1), 6000); });
+
+    /* Swipe support */
+    let touchX = 0;
+    slider?.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+    slider?.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - touchX;
+      if (Math.abs(dx) > 40) goTo(dx < 0 ? cur + 1 : cur - 1);
+    });
+  })();
+
+  /* ── Smooth scroll for anchor links ─────────────────────── */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+
+})();
+</script>
+</body>
+</html>
